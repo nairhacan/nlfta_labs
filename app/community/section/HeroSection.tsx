@@ -12,7 +12,7 @@ export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | null>(null);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -43,8 +43,8 @@ export default function HeroSection() {
       opacity: number;
 
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+        this.x = Math.random() * canvas!.width;
+        this.y = Math.random() * canvas!.height;
         this.size = Math.random() * 1.5 + 0.5;
         this.speedX = (Math.random() - 0.5) * 0.3;
         this.speedY = (Math.random() - 0.5) * 0.3;
@@ -55,8 +55,8 @@ export default function HeroSection() {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        if (this.x < 0 || this.x > canvas!.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas!.height) this.speedY *= -1;
       }
 
       draw() {
@@ -75,8 +75,8 @@ export default function HeroSection() {
 
     const animate = () => {
       if (!ctx) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+      ctx.clearRect(0, 0, canvas!.width, canvas!.height);
+
       particles.forEach((particle) => {
         particle.update();
         particle.draw();
@@ -111,9 +111,9 @@ export default function HeroSection() {
     gsap.set('.stat-item', { clearProps: 'all' });
 
     // GSAP Animations dengan delay untuk ensure DOM ready
-    const tl = gsap.timeline({ 
+    const tl = gsap.timeline({
       defaults: { ease: 'power3.out' },
-      delay: 0.1 
+      delay: 0.1
     });
 
     const chars = title.querySelectorAll('.char');
@@ -163,11 +163,11 @@ export default function HeroSection() {
 
     // Magnetic button effect
     const buttons = container.querySelectorAll('.magnetic-btn');
-    const magneticHandlers: Map<Element, { move: (e: MouseEvent) => void; leave: () => void }> = new Map();
+    const magneticHandlers: Map<HTMLElement, { move: (e: MouseEvent) => void; leave: () => void }> = new Map();
 
     buttons.forEach((btn) => {
       const element = btn as HTMLElement;
-      
+
       const handleMove = (e: MouseEvent) => {
         const rect = element.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
@@ -212,22 +212,22 @@ export default function HeroSection() {
 
     // Cleanup function
     return () => {
-      if (animationFrameRef.current) {
+      if (animationFrameRef.current !== null) {
         cancelAnimationFrame(animationFrameRef.current);
       }
       window.removeEventListener('resize', resizeCanvas);
-      
+
       // Kill semua GSAP animations dan ScrollTriggers
       tl.kill();
       scrollTrigger.kill();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      
+
       // Remove event listeners
       magneticHandlers.forEach((handlers, element) => {
-        element.removeEventListener('mousemove', handlers.move);
-        element.removeEventListener('mouseleave', handlers.leave);
+        element.removeEventListener('mousemove', handlers.move as any);
+        element.removeEventListener('mouseleave', handlers.leave as any);
       });
-      
+
       // Clear GSAP properties
       gsap.set('.char', { clearProps: 'all' });
       gsap.set('.line', { clearProps: 'all' });
@@ -260,7 +260,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 max-w-7xl mx-auto">
-        
+
         {/* Main Title */}
         <div ref={titleRef} className="text-center mb-16">
           <h1 className="text-[11vw] md:text-[7.5vw] lg:text-[6.5vw] font-bold leading-none tracking-tighter mb-8">

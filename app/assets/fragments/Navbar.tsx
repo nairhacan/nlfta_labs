@@ -66,9 +66,8 @@ const Navbar = () => {
             <Link
               key={link.name}
               href={link.href}
-              className={`font-mono text-[13px] tracking-[0.15em] lowercase transition-all duration-500 hover:text-indigo-400 ${
-                pathname === link.href ? "text-white font-medium" : "text-gray-400 font-extralight"
-              }`}
+              className={`font-mono text-[13px] tracking-[0.15em] lowercase transition-all duration-500 hover:text-indigo-400 ${pathname === link.href ? "text-white font-medium" : "text-gray-400 font-extralight"
+                }`}
             >
               {link.name}
             </Link>
@@ -102,7 +101,9 @@ const Navbar = () => {
             <div key={link.name} className="overflow-hidden">
               <Link
                 href={link.href}
-                ref={(el) => (linksRef.current[i] = el)}
+                ref={(el) => {
+                  linksRef.current[i] = el;
+                }}
                 onClick={() => setIsOpen(false)}
                 className="text-7xl font-black tracking-tighter text-white block hover:text-indigo-500 active:scale-95 transition-transform origin-left"
               >
