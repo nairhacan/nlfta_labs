@@ -1,0 +1,95 @@
+# Lisensi NLFTs
+
+Lisensi ini berfungsi sebagai pemberitahuan resmi mengenai status hukum, kepemilikan, serta batas penggunaan seluruh aset yang berada di bawah nama NLFTs. Dokumen ini dimaksudkan untuk memberikan kejelasan bagi anggota komunitas maupun pihak eksternal mengenai apa yang dapat dan tidak dapat dilakukan terhadap karya, teknologi, dan materi yang dikembangkan oleh NLFTs.
+
+Lisensi NLFTs bukan sekadar pernyataan hukum, melainkan bagian dari upaya menjaga keberlanjutan ekosistem komunitas. Dengan lisensi ini, NLFTs memastikan bahwa hasil kerja kolektif tetap terlindungi, digunakan secara bertanggung jawab, dan tidak disalahgunakan di luar konteks yang telah disepakati.
+
+
+```LICENSE
+Copyright © 2024 NLFTs.
+All rights reserved.
+
+OWNERSHIP
+This repository and all associated contents, including but not limited to
+source code, documentation, designs, configurations, and digital assets, are
+the exclusive intellectual property of NLFTs and remain under its full control.
+
+RESTRICTIONS
+Without explicit and valid written authorization from NLFTs, no individual or
+entity is permitted to:
+- Use, copy, modify, adapt, or create derivative works;
+- Merge, publish, distribute, sublicense, or sell any part of this repository;
+- Access or utilize the repository for commercial or non-commercial purposes.
+
+AUTHORIZATION AND ACCESS
+Authorization to access or use this repository shall be deemed valid ONLY if
+granted through explicit written authorization from NLFTs and supported by a
+legally binding agreement duly executed by all relevant parties in accordance
+with applicable internal company procedures and prevailing laws.
+
+VIOLATION
+Any access, use, reproduction, or distribution of this repository without such
+authorization constitutes a violation of intellectual property rights and may
+result in civil and/or criminal legal action.
+
+DISCLAIMER
+THE SOFTWARE AND ALL ASSOCIATED CONTENT ARE PROVIDED "AS IS", WITHOUT WARRANTY
+OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR
+FITNESS FOR ANY PARTICULAR USE.
+IN NO EVENT SHALL NLFTs BE LIABLE FOR ANY CLAIM, DAMAGES, LOSSES, OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM,
+OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR INABILITY TO USE THE
+SOFTWARE.
+
+GOVERNING LAW AND JURISDICTION
+This license shall be governed by and construed exclusively in accordance with
+the laws of the Republic of Indonesia and applicable internal corporate policies
+of NLFTs.
+No foreign jurisdiction, international treaty, or external legal framework
+shall apply unless explicitly agreed upon in writing by NLFTs.
+```
+
+
+## Pernyataan Hak Cipta
+
+Hak cipta atas seluruh konten NLFTs dilindungi sepenuhnya.
+
+Copyright © 2024 NLFTs.
+All rights reserved.
+
+Pernyataan ini menegaskan bahwa tidak ada hak yang dilepaskan secara implisit. Setiap hak penggunaan, distribusi, atau modifikasi hanya berlaku apabila dinyatakan secara eksplisit melalui lisensi atau perjanjian tertulis.
+
+## Kepemilikan
+
+Seluruh repositori, sistem, dan konten yang terkait dengan NLFTs—termasuk namun tidak terbatas pada kode sumber, dokumentasi, desain, konfigurasi, arsitektur sistem, dan aset digital—merupakan kekayaan intelektual eksklusif NLFTs. Aset-aset tersebut berada di bawah kendali penuh NLFTs sebagai entitas komunitas dan organisasi pengembang.
+
+Keberadaan akses publik, dokumentasi terbuka, atau visibilitas repositori tidak dapat ditafsirkan sebagai pengalihan kepemilikan atau pemberian hak penggunaan bebas.
+
+## Pembatasan Penggunaan
+
+Tanpa adanya izin tertulis yang sah dari NLFTs, tidak satu pun pihak diperkenankan untuk menggunakan, menyalin, memodifikasi, mengadaptasi, atau membuat karya turunan dari aset NLFTs. Hal ini mencakup pula penggabungan, publikasi ulang, distribusi, sublisensi, maupun penjualan sebagian atau seluruh materi yang dilindungi.
+
+Pembatasan ini berlaku baik untuk tujuan komersial maupun non-komersial. Setiap bentuk pemanfaatan di luar kerangka lisensi resmi dianggap tidak sah.
+
+## Otorisasi dan Akses
+
+Hak akses atau penggunaan terhadap aset NLFTs hanya dianggap sah apabila diberikan melalui izin tertulis yang eksplisit dan didukung oleh perjanjian hukum yang mengikat. Izin tersebut harus dikeluarkan sesuai dengan prosedur internal NLFTs dan tunduk pada ketentuan hukum yang berlaku.
+
+Tidak ada bentuk izin tersirat, asumsi, atau interpretasi sepihak yang dapat dijadikan dasar penggunaan.
+
+## Pelanggaran
+
+Setiap akses, penggunaan, reproduksi, atau distribusi aset NLFTs tanpa otorisasi yang sah merupakan pelanggaran hak kekayaan intelektual. NLFTs berhak mengambil langkah tegas, termasuk tindakan perdata dan/atau pidana, sesuai dengan tingkat pelanggaran dan ketentuan hukum yang berlaku.
+
+## Penyangkalan Tanggung Jawab
+
+Seluruh perangkat lunak dan konten NLFTs disediakan dalam kondisi "sebagaimana adanya" tanpa jaminan apa pun, baik tersurat maupun tersirat. NLFTs tidak memberikan jaminan terkait kelayakan komersial, kesesuaian untuk tujuan tertentu, maupun bebas dari pelanggaran pihak ketiga.
+
+NLFTs tidak bertanggung jawab atas klaim, kerugian, atau konsekuensi lain yang timbul dari penggunaan atau ketidakmampuan menggunakan aset NLFTs.
+
+## Hukum yang Berlaku dan Yurisdiksi
+
+Lisensi ini diatur dan ditafsirkan secara eksklusif berdasarkan hukum Republik Indonesia serta kebijakan internal NLFTs. Tidak ada yurisdiksi asing, perjanjian internasional, atau kerangka hukum eksternal yang berlaku kecuali disetujui secara tertulis oleh NLFTs.
+
+Dokumen ini merupakan bagian integral dari tata kelola NLFTs dan menjadi acuan resmi dalam seluruh penggunaan aset dan teknologi NLFTs.
