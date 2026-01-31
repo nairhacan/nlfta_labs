@@ -126,6 +126,7 @@ export default function JoinSection() {
         <section
             ref={sectionRef}
             className="relative min-h-[80vh] bg-slate-950 py-32 px-6 overflow-hidden flex flex-col justify-center border-t border-white/5"
+            id='JoinSection'
         >
             {/* Background Ornaments */}
             <div className="join-bg-glow absolute -top-24 -left-24 w-[600px] h-[600px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none" />
