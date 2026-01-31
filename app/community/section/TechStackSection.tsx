@@ -120,6 +120,7 @@ export default function TechStackSection() {
         <section
             ref={sectionRef}
             className="relative min-h-[180vh] bg-slate-950 overflow-hidden py-40 flex flex-col items-center justify-center select-none"
+            id="tech-stack"
         >
             {/* BACKGROUND */}
             <div className="absolute inset-0 z-0">
