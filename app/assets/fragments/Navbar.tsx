@@ -7,7 +7,7 @@ import gsap from "gsap";
 const navLinks = [
   { name: "ShowCase", href: "/ShowCase" },
   { name: "Docs", href: "/docs" },
-  { name: "Blog", href: "/blog" },
+  { name: "Teams", href: "/teams" },
   { name: "Community", href: "/community" },
 ];
 
