@@ -156,36 +156,40 @@ export function DocsRightSidebar() {
     }, [pathname]);
 
     return (
-        <aside className="fixed top-0 bottom-0 right-0 w-64 pt-24 px-8 hidden xl:flex flex-col border-l border-white/5 bg-slate-950/20 backdrop-blur-sm z-5">
-            <div className="mb-10 relative">
-                <div className="absolute top-0 right-[-8px] h-full w-[2px] bg-linear-to-b from-indigo-500/0 via-indigo-500/40 to-indigo-500/0"></div>
+        <aside className="fixed top-0 bottom-0 right-0 w-64 pt-24 hidden xl:flex flex-col border-l border-white/5 bg-slate-950/20 backdrop-blur-sm z-5">
+            {/* Scrollable Navigation Area */}
+            <div className="flex-1 overflow-y-auto custom-scrollbar px-8 py-2">
+                <div className="mb-10 relative">
+                    <div className="absolute top-0 right-[-8px] h-full w-[2px] bg-linear-to-b from-indigo-500/0 via-indigo-500/40 to-indigo-500/0"></div>
 
-                <h5 className="text-[11px] font-black uppercase tracking-[0.2em] text-white/40 mb-6 flex items-center gap-2">
-                    <span className="w-4 h-px bg-indigo-500/50"></span>
-                    On this page
-                </h5>
-                <nav className="space-y-4 border-r border-white/5 pr-4">
-                    {headings.length > 0 ? (
-                        headings.map((heading, i) => (
-                            <a
-                                key={i}
-                                href={`#${heading.id}`}
-                                className={`block text-xs font-medium transition-all duration-200 ${activeId === heading.id
-                                    ? "text-indigo-400 translate-x-1"
-                                    : "text-slate-500 hover:text-white"
-                                    } ${heading.level === 3 ? "pl-4 text-[11px]" : ""
-                                    }`}
-                            >
-                                {heading.text}
-                            </a>
-                        ))
-                    ) : (
-                        <p className="text-[10px] text-slate-600 italic">No headings found</p>
-                    )}
-                </nav>
+                    <h5 className="text-[11px] font-black uppercase tracking-[0.2em] text-white/40 mb-6 flex items-center gap-2">
+                        <span className="w-4 h-px bg-indigo-500/50"></span>
+                        On this page
+                    </h5>
+                    <nav className="space-y-4 border-r border-white/5 pr-4">
+                        {headings.length > 0 ? (
+                            headings.map((heading, i) => (
+                                <a
+                                    key={i}
+                                    href={`#${heading.id}`}
+                                    className={`block text-xs font-medium transition-all duration-200 ${activeId === heading.id
+                                        ? "text-indigo-400 translate-x-1"
+                                        : "text-slate-500 hover:text-white"
+                                        } ${heading.level === 3 ? "pl-4 text-[11px]" : ""
+                                        }`}
+                                >
+                                    {heading.text}
+                                </a>
+                            ))
+                        ) : (
+                            <p className="text-[10px] text-slate-600 italic">No headings found</p>
+                        )}
+                    </nav>
+                </div>
             </div>
 
-            <div className="mt-auto pb-12">
+            {/* Fixed Sponsor Section at Bottom */}
+            <div className="px-8 pb-12 mt-auto bg-slate-950/50 backdrop-blur-md pt-6 border-t border-white/5">
                 <div className="p-5 rounded-2xl bg-linear-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 group hover:border-indigo-500/40 transition-colors relative overflow-hidden text-center">
                     <div className="absolute top-0 left-0 w-full h-[1px] bg-linear-to-r from-transparent via-indigo-500/40 to-transparent"></div>
 

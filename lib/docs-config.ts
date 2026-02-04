@@ -15,5 +15,13 @@ export const DOCS_NAVIGATION: NavItem[] = [
             { title: "Kebijakan Hak Kekayaan Intelektual & Penggunaan", href: "/docs/getting-started/kebijakan" },
             { title: "Lisensi NLFTs", href: "/docs/getting-started/perizinan" },
         ],
+    },
+    {
+        title: "Contribution",
+        items: [
+            { title: "Cara Berkontribusi", href: "/docs/contribution/cara_berkontribusi" },
+            { title: "Persyaratan Teknis", href: "/docs/contribution/persyaratan_teknis" },
+        ],
     }
+
 ];
