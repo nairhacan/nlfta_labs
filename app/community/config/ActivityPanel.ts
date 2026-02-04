@@ -30,7 +30,7 @@ const ACTIVITY = [
         website: ''
     },
     {
-        user: 'Nairha Qiana',
+        user: 'Nairha Az-zara',
         action: 'Frontend Devloper |',
         target: 'NLFTs Company',
         time: '24m ago',
@@ -148,6 +148,16 @@ const ACTIVITY = [
         avatar: 'https://avatars.githubusercontent.com/u/202130049?s=96&v=4',
         github: 'https://github.com/Vahllzzzz',
         website: ''
+    },
+    {
+        user: 'fransiska',
+        action: 'Frontend Developer |',
+        target: 'FTs Project',
+        time: '52m ago',
+        type: 'Frontend',
+        avatar: 'https://avatars.githubusercontent.com/u/201906707?v=4',
+        github: 'https://github.com/fransiska-lenggu',
+        website: '' 
     },
 ];
 

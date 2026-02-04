@@ -57,17 +57,17 @@ export default function HeroSection() {
   {/* AVATAR STACK */}
   <div className="flex -space-x-3">
     <img
-      src="https://i.pravatar.cc/32?img=12"
+      src="https://avatars.githubusercontent.com/u/226198461?v=4"
       alt="member"
       className="w-8 h-8 rounded-full border border-[#070914] object-cover"
     />
     <img
-      src="https://i.pravatar.cc/32?img=32"
+      src="https://avatars.githubusercontent.com/u/228851591?v=4"
       alt="member"
       className="w-8 h-8 rounded-full border border-[#070914] object-cover"
     />
     <img
-      src="https://i.pravatar.cc/32?img=45"
+      src="https://avatars.githubusercontent.com/u/228840381?s=130&v=4"
       alt="member"
       className="w-8 h-8 rounded-full border border-[#070914] object-cover"
     />

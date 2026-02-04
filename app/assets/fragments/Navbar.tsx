@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import gsap from "gsap";
 
 const navLinks = [
-  { name: "ShowCase", href: "/ShowCase" },
+  { name: "ShowCase", href: "/showcase" },
   { name: "Docs", href: "/docs" },
   { name: "Teams", href: "/teams" },
   { name: "Community", href: "/community" },

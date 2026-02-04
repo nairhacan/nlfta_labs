@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import EVENTS from '../config/EventsPanel';
+
 
 /* ============================================================
    TYPES & DATA
@@ -20,47 +22,7 @@ interface EventItem {
     speaker?: string;
 }
 
-const EVENTS: EventItem[] = [
-    {
-        id: 'ev-1',
-        title: 'Edge Runtime Deep Dive',
-        category: 'webinar',
-        date: '2026-02-15T10:00:00',
-        displayDate: 'Feb 15, 2026',
-        description: 'Learn how to optimize your middleware and edge functions for sub-50ms latency.',
-        location: 'Stream (YouTube Live)',
-        speaker: 'Alex Chen'
-    },
-    {
-        id: 'ev-2',
-        title: 'Global Infra Workshop',
-        category: 'workshop',
-        date: '2026-03-02T14:30:00',
-        displayDate: 'Mar 02, 2026',
-        description: 'Hands-on session building a multi-region deployment strategy from scratch.',
-        location: 'Official Discord',
-        speaker: 'Sarah Kim'
-    },
-    {
-        id: 'ev-3',
-        title: 'SF Developer Meetup',
-        category: 'meetup',
-        date: '2026-03-20T18:00:00',
-        displayDate: 'Mar 20, 2026',
-        description: 'Quarterly in-person networking event for the Bay Area developer community.',
-        location: 'San Francisco, CA',
-    },
-    {
-        id: 'ev-4',
-        title: 'Serverless Patterns 2026',
-        category: 'webinar',
-        date: '2026-04-05T09:00:00',
-        displayDate: 'Apr 05, 2026',
-        description: 'Discussing the shift from traditional serverless to stateful edge computing.',
-        location: 'Zoom Webinar',
-        speaker: 'Mike Jones'
-    },
-];
+
 
 /* ============================================================
    HELPER: COUNTDOWN COMPONENT
@@ -240,7 +202,7 @@ export default function EventsSection() {
                             </div>
 
                             {/* EVENT CARD */}
-                            <div className="flex-1 w-full harmonized-card relative p-8 md:p-10 rounded-[2rem] border border-white/5 bg-white-[0.01] backdrop-blur-xl transition-all duration-500 hover:bg-white-[0.03] hover:border-white/10 group-hover:-translate-y-1 ring-1 ring-white/5 overflow-hidden">
+                            <div className="flex-1 w-full harmonized-card relative p-8 md:p-10 rounded-4xl border border-white/5 bg-white/1 backdrop-blur-xl transition-all duration-500 hover:bg-white/3 hover:border-white/10 group-hover:-translate-y-1 ring-1 ring-white/5 overflow-hidden">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-indigo-500/5 to-transparent blur-3xl rounded-full" />
 
                                 <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 relative z-10">

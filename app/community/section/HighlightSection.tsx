@@ -4,47 +4,13 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import TESTIMONIALS from '../config/TestimonailasPanel';
+import Link from 'next/link';
 
 /* ============================================================
    DATA
 ============================================================ */
-const TESTIMONIALS = [
-    {
-        name: 'Sarah Drasner',
-        role: 'Staff Engineer',
-        company: 'Google',
-        quote: 'The community support here is unlike anything I’ve seen. It’s not just about solving bugs; it’s about growing together as architects.',
-        image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200&h=200',
-    },
-    {
-        name: 'Guillermo Rauch',
-        role: 'CEO',
-        company: 'Vercel',
-        quote: 'Scale and performance are built into the DNA of this community. Every deployment feels like a step into the future of the web.',
-        image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200',
-    },
-    {
-        name: 'Addy Osmani',
-        role: 'Engineering Manager',
-        company: 'Google Chrome',
-        quote: 'The collaborative energy in the discussions tab is infectious. 12ms response time isn’t just a metric; it’s a standard of excellence.',
-        image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&q=80&w=200&h=200',
-    },
-    {
-        name: 'Lee Robinson',
-        role: 'VP of Product',
-        company: 'Vercel',
-        quote: 'The edge network insights provided by the community have significantly improved our global strategy workflows. Truly transformative.',
-        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200',
-    },
-    {
-        name: 'Nattalie Wood',
-        role: 'Lead Designer',
-        company: 'DesignFlow',
-        quote: 'Design meets engineering in the most beautiful way here. The feedback loop is instantaneous and incredibly high-signal.',
-        image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200&h=200',
-    },
-];
+
 
 /* ============================================================
    COMPONENT
@@ -175,7 +141,7 @@ export default function HighlightSection() {
                     {[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
                         <div
                             key={i}
-                            className="highlight-card group relative w-[350px] md:w-[450px] p-8 md:p-10 rounded-3xl border border-white/5 bg-white-[0.02] backdrop-blur-xl transition-all duration-500 hover:border-violet-500/30 hover:bg-white-[0.05] ring-1 ring-white/5"
+                            className="highlight-card group relative w-[350px] md:w-[450px] p-8 md:p-10 rounded-3xl border border-white/5 bg-white/2 backdrop-blur-xl transition-all duration-500 hover:border-violet-500/30 hover:bg-white/5 ring-1 ring-white/5"
                         >
                             <div className="parallax-icon absolute top-8 right-8 opacity-10 group-hover:opacity-30 transition-opacity">
                                 <svg className="w-12 h-12 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
@@ -196,6 +162,7 @@ export default function HighlightSection() {
                                         alt={t.name}
                                         fill
                                         className="object-cover"
+                                        unoptimized
                                     />
                                 </div>
                                 <div>
@@ -217,10 +184,15 @@ export default function HighlightSection() {
 
             {/* BOTTOM CTA (Parallax floating) */}
             <div className="mt-20 text-center">
-                <button className="group relative px-8 py-4 bg-white text-black font-bold rounded-full overflow-hidden transition-transform active:scale-95 shadow-[0_0_50px_rgba(255,255,255,0.1)]">
-                    <span className="relative z-10">Start Growing with Us</span>
+                <Link
+                    href="#JoinSection"
+                    className="group relative inline-block px-10 py-4 bg-white text-black font-bold rounded-full overflow-hidden transition-transform active:scale-95 shadow-[0_0_50px_rgba(255,255,255,0.1)]"
+                >
+                    <span className="relative z-10 group-hover:text-white transition-colors duration-500">
+                        Start Growing with Us
+                    </span>
                     <div className="absolute inset-0 bg-linear-to-r from-blue-400 to-indigo-500 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                </button>
+                </Link>
             </div>
         </section>
     );

@@ -141,7 +141,7 @@ export default function TechStackSection() {
                 <h2 className="text-5xl md:text-7xl lg:text-[7.5vw] font-black text-white tracking-widest leading-[0.9] mb-10 drop-shadow-2xl">
                     TECH <br />
                     <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-indigo-400 to-rose-500">
-                        NEXUS.
+                        NLFTs.
                     </span>
                 </h2>
                 <p className="text-slate-400 text-lg md:text-xl font-medium max-w-4xl mx-auto leading-relaxed opacity-90 tracking-tight italic">
