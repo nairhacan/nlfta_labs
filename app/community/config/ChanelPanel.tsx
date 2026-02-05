@@ -4,7 +4,7 @@ const CHANNELS = [
         title: 'WhatsApp Group',
         description: 'Diskusi waktu nyata dan pembaruan cepat untuk komunitas pengembang lokal..',
         cta: 'Join Group',
-        link: 'https://chat.whatsapp.com/CsT9hYFZUmz6NRFJzZ3yhj?mode=gi_t',
+        link: '/connected/whatsapp',
         color: 'emerald',
         icon: (
             <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -17,7 +17,7 @@ const CHANNELS = [
         title: 'Discord Server',
         description: 'Pusat utama untuk dukungan teknis tingkat lanjut, pameran proyek, dan obrolan suara..',
         cta: 'Connect Now',
-        link: 'https://discord.gg/VCgacGFg',
+        link: '/connected/discord',
         color: 'indigo',
         icon: (
             <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -30,7 +30,7 @@ const CHANNELS = [
         title: 'Open Source',
         description: 'Berkontribusilah pada alat-alat inti kami, laporkan masalah, dan bentuklah peta jalan platform ini..',
         cta: 'View Repo',
-        link: 'https://github.com/NFLTs',
+        link: '/connected/github',
         color: 'slate',
         icon: (
             <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">

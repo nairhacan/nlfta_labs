@@ -72,9 +72,11 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <button className="ml-4 px-6 py-1.5 border border-white/20 font-mono text-[11px] lowercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">
-            /start_project
-          </button>
+          <Link href="/connected">
+            <button className="ml-4 px-6 py-1.5 border border-white/20 font-mono text-[11px] lowercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">
+              start up
+            </button>
+          </Link>
         </div>
 
         {/* MOBILE TOGGLE - Animating Burger to X */}
