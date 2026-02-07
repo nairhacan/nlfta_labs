@@ -27,3 +27,669 @@ body {
 ::-webkit-scrollbar-thumb {
     @apply bg-slate-800 rounded-full hover:bg-slate-700;
 }
+
+
+
+
+
+/* ============================================
+   NLFTs Documentation - Global Styles
+   Comprehensive Markdown & Typography Styling
+   ============================================ */
+
+/* Tailwind 4: Using @import "tailwindcss" at top of file */
+
+/* ============================================
+   BASE RESET & IMPROVEMENTS
+   ============================================ */
+@layer base {
+    * {
+        @apply border-slate-800;
+    }
+
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply bg-slate-950 text-slate-200;
+        font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Better focus styles */
+    *:focus-visible {
+        @apply outline-none ring-2 ring-indigo-500/50 ring-offset-2 ring-offset-slate-950;
+    }
+}
+
+/* ============================================
+   DOCUMENTATION PROSE STYLES
+   ============================================ */
+@layer components {
+    .prose-docs {
+        @apply text-slate-300 leading-relaxed;
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+    /* ============================================
+       HEADINGS - Hierarchical & Distinctive
+       ============================================ */
+    .prose-docs h1 {
+        @apply text-4xl md:text-5xl font-black text-white mb-6 mt-12 leading-tight tracking-tight;
+        background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .prose-docs h1:first-child {
+        @apply mt-0;
+    }
+
+    .prose-docs h2 {
+        @apply text-3xl md:text-4xl font-bold text-white mb-5 mt-16 leading-tight tracking-tight;
+        position: relative;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid rgb(99 102 241 / 0.1);
+    }
+
+    .prose-docs h2::before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 4rem;
+        height: 2px;
+        background: linear-gradient(90deg, rgb(99 102 241) 0%, rgb(168 85 247) 100%);
+        border-radius: 2px;
+    }
+
+    .prose-docs h3 {
+        @apply text-2xl md:text-3xl font-bold text-slate-100 mb-4 mt-12 leading-snug tracking-tight;
+        position: relative;
+        padding-left: 1rem;
+    }
+
+    .prose-docs h3::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.4em;
+        width: 4px;
+        height: 1.2em;
+        background: linear-gradient(180deg, rgb(99 102 241) 0%, rgb(168 85 247) 100%);
+        border-radius: 2px;
+    }
+
+    .prose-docs h4 {
+        @apply text-xl md:text-2xl font-semibold text-slate-200 mb-3 mt-10 leading-snug;
+    }
+
+    .prose-docs h5 {
+        @apply text-lg md:text-xl font-semibold text-slate-300 mb-3 mt-8 leading-snug;
+    }
+
+    .prose-docs h6 {
+        @apply text-base md:text-lg font-semibold text-slate-400 mb-2 mt-6 uppercase tracking-wider text-sm;
+    }
+
+    /* Heading Anchor Links */
+    .prose-docs h1>a,
+    .prose-docs h2>a,
+    .prose-docs h3>a,
+    .prose-docs h4>a,
+    .prose-docs h5>a,
+    .prose-docs h6>a {
+        @apply no-underline text-inherit relative;
+    }
+
+    .prose-docs h2>a::after,
+    .prose-docs h3>a::after,
+    .prose-docs h4>a::after {
+        content: '#';
+        @apply absolute -left-6 top-0 text-slate-700 opacity-0 transition-opacity font-normal;
+    }
+
+    .prose-docs h2:hover>a::after,
+    .prose-docs h3:hover>a::after,
+    .prose-docs h4:hover>a::after {
+        @apply opacity-100;
+    }
+
+    /* ============================================
+       PARAGRAPHS & TEXT
+       ============================================ */
+    .prose-docs p {
+        @apply mb-6 leading-relaxed text-slate-300;
+    }
+
+    .prose-docs p:last-child {
+        @apply mb-0;
+    }
+
+    /* Lead Paragraph */
+    .prose-docs .lead {
+        @apply text-xl text-slate-400 leading-relaxed mb-8;
+    }
+
+    /* Strong & Emphasis */
+    .prose-docs strong,
+    .prose-docs b {
+        @apply font-semibold text-slate-100;
+    }
+
+    .prose-docs em,
+    .prose-docs i {
+        @apply italic text-slate-300;
+    }
+
+    .prose-docs small {
+        @apply text-sm text-slate-400;
+    }
+
+    .prose-docs mark {
+        @apply bg-yellow-500/20 text-yellow-200 px-1 rounded;
+    }
+
+    /* ============================================
+       LINKS
+       ============================================ */
+    .prose-docs a {
+        @apply text-indigo-400 underline decoration-indigo-400/30 underline-offset-2 transition-all hover:text-indigo-300 hover:decoration-indigo-300;
+    }
+
+    .prose-docs a:hover {
+        @apply decoration-indigo-300/50;
+    }
+
+    .prose-docs a code {
+        @apply text-indigo-400;
+    }
+
+    /* External Link Icon */
+    .prose-docs a[target="_blank"]::after {
+        content: '↗';
+        @apply inline-block ml-1 text-xs opacity-60;
+    }
+
+    /* ============================================
+       LISTS - Ordered & Unordered
+       ============================================ */
+    .prose-docs ul,
+    .prose-docs ol {
+        @apply my-6 space-y-2;
+    }
+
+    .prose-docs ul {
+        @apply list-none pl-0;
+    }
+
+    .prose-docs ul>li {
+        @apply relative pl-7 text-slate-300 leading-relaxed;
+    }
+
+    .prose-docs ul>li::before {
+        content: '';
+        @apply absolute left-0 top-[0.6em] w-1.5 h-1.5 rounded-full bg-indigo-500;
+        box-shadow: 0 0 6px rgb(99 102 241 / 0.5);
+    }
+
+    .prose-docs ol {
+        @apply list-none pl-0;
+        counter-reset: item;
+    }
+
+    .prose-docs ol>li {
+        @apply relative pl-8 text-slate-300 leading-relaxed;
+        counter-increment: item;
+    }
+
+    .prose-docs ol>li::before {
+        content: counter(item);
+        @apply absolute left-0 top-0 flex items-center justify-center w-6 h-6 text-xs font-bold text-indigo-400 bg-indigo-500/10 border border-indigo-500/30 rounded;
+    }
+
+    /* Nested Lists */
+    .prose-docs ul ul,
+    .prose-docs ul ol,
+    .prose-docs ol ul,
+    .prose-docs ol ol {
+        @apply my-3 ml-4;
+    }
+
+    .prose-docs li>p {
+        @apply my-2;
+    }
+
+    /* Task Lists */
+    .prose-docs input[type="checkbox"] {
+        @apply mr-2 rounded border-slate-600 bg-slate-800 text-indigo-500 focus:ring-indigo-500/50;
+    }
+
+    /* ============================================
+       BLOCKQUOTES
+       ============================================ */
+    .prose-docs blockquote {
+        @apply my-8 pl-6 pr-4 py-4 border-l-4 border-indigo-500 bg-indigo-500/5 rounded-r-lg italic text-slate-300 relative;
+    }
+
+    .prose-docs blockquote::before {
+        content: '"';
+        @apply absolute -top-2 left-2 text-6xl text-indigo-500/20 font-serif leading-none;
+    }
+
+    .prose-docs blockquote p {
+        @apply mb-3;
+    }
+
+    .prose-docs blockquote p:last-child {
+        @apply mb-0;
+    }
+
+    .prose-docs blockquote cite {
+        @apply block text-sm text-slate-500 not-italic mt-3 border-t border-indigo-500/10 pt-3;
+    }
+
+    /* ============================================
+       CODE - Inline & Blocks
+       ============================================ */
+    .prose-docs code {
+        @apply px-1.5 py-0.5 rounded bg-slate-800/80 border border-slate-700/50 text-indigo-300 text-[0.9em] font-mono;
+    }
+
+    .prose-docs a code {
+        @apply text-indigo-400;
+    }
+
+    .prose-docs pre {
+        @apply my-8 p-6 rounded-lg bg-slate-900 border border-slate-800 overflow-x-auto;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    }
+
+    .prose-docs pre code {
+        @apply p-0 bg-transparent border-0 text-slate-300 text-sm leading-relaxed;
+        font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+    }
+
+    /* Code Block with Language Label */
+    .prose-docs pre[data-language]::before {
+        content: attr(data-language);
+        @apply absolute top-0 right-0 px-3 py-1 text-xs font-mono uppercase tracking-wider text-slate-500 bg-slate-800/50 rounded-bl-lg;
+    }
+
+    .prose-docs pre {
+        @apply relative;
+    }
+
+    /* Copy Code Button Styling */
+    .prose-docs .code-block-wrapper {
+        @apply relative;
+    }
+
+    .prose-docs .copy-code-button {
+        @apply absolute top-3 right-3 px-3 py-1.5 text-xs font-mono uppercase bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-slate-200 border border-slate-700 rounded transition-all opacity-0;
+    }
+
+    .prose-docs .code-block-wrapper:hover .copy-code-button {
+        @apply opacity-100;
+    }
+
+    .prose-docs .copy-code-button:active {
+        @apply bg-indigo-600 text-white border-indigo-500;
+    }
+
+    /* Syntax Highlighting - Basic Colors */
+    .prose-docs .token.comment {
+        @apply text-slate-500 italic;
+    }
+
+    .prose-docs .token.keyword {
+        @apply text-purple-400;
+    }
+
+    .prose-docs .token.string {
+        @apply text-green-400;
+    }
+
+    .prose-docs .token.function {
+        @apply text-blue-400;
+    }
+
+    .prose-docs .token.number {
+        @apply text-orange-400;
+    }
+
+    .prose-docs .token.operator {
+        @apply text-slate-300;
+    }
+
+    /* ============================================
+       TABLES
+       ============================================ */
+    .prose-docs table {
+        @apply w-full my-8 text-sm border-collapse;
+        border-spacing: 0;
+    }
+
+    .prose-docs table thead {
+        @apply bg-slate-900/50;
+    }
+
+    .prose-docs table thead th {
+        @apply px-4 py-3 text-left font-semibold text-slate-200 border-b-2 border-indigo-500/30 uppercase tracking-wider text-xs;
+    }
+
+    .prose-docs table tbody tr {
+        @apply border-b border-slate-800/50 transition-colors hover:bg-slate-900/30;
+    }
+
+    .prose-docs table tbody td {
+        @apply px-4 py-3 text-slate-300;
+    }
+
+    .prose-docs table tbody tr:last-child {
+        @apply border-b-0;
+    }
+
+    /* Striped Tables */
+    .prose-docs table.striped tbody tr:nth-child(even) {
+        @apply bg-slate-900/20;
+    }
+
+    /* Compact Tables */
+    .prose-docs table.compact thead th,
+    .prose-docs table.compact tbody td {
+        @apply px-3 py-2 text-xs;
+    }
+
+    /* Table Wrapper for Horizontal Scroll */
+    .prose-docs .table-wrapper {
+        @apply overflow-x-auto my-8 rounded-lg border border-slate-800;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2);
+    }
+
+    .prose-docs .table-wrapper table {
+        @apply my-0;
+    }
+
+    /* ============================================
+       HORIZONTAL RULES
+       ============================================ */
+    .prose-docs hr {
+        @apply my-12 border-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent;
+    }
+
+    .prose-docs hr.thick {
+        @apply h-0.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600;
+    }
+
+    /* ============================================
+       IMAGES & FIGURES
+       ============================================ */
+    .prose-docs img {
+        @apply rounded-lg my-8 border border-slate-800 shadow-xl;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+    }
+
+    .prose-docs figure {
+        @apply my-10;
+    }
+
+    .prose-docs figure img {
+        @apply my-0;
+    }
+
+    .prose-docs figcaption {
+        @apply text-sm text-slate-500 text-center mt-3 italic;
+    }
+
+    /* ============================================
+       CALLOUTS / ADMONITIONS
+       ============================================ */
+    .prose-docs .callout {
+        @apply my-8 p-5 rounded-lg border-l-4 relative;
+    }
+
+    .prose-docs .callout-icon {
+        @apply absolute top-5 left-5 w-5 h-5;
+    }
+
+    .prose-docs .callout-content {
+        @apply pl-8;
+    }
+
+    /* Info Callout */
+    .prose-docs .callout.info {
+        @apply border-blue-500 bg-blue-500/5;
+    }
+
+    .prose-docs .callout.info .callout-icon {
+        @apply text-blue-400;
+    }
+
+    /* Warning Callout */
+    .prose-docs .callout.warning {
+        @apply border-yellow-500 bg-yellow-500/5;
+    }
+
+    .prose-docs .callout.warning .callout-icon {
+        @apply text-yellow-400;
+    }
+
+    /* Danger Callout */
+    .prose-docs .callout.danger {
+        @apply border-red-500 bg-red-500/5;
+    }
+
+    .prose-docs .callout.danger .callout-icon {
+        @apply text-red-400;
+    }
+
+    /* Success Callout */
+    .prose-docs .callout.success {
+        @apply border-green-500 bg-green-500/5;
+    }
+
+    .prose-docs .callout.success .callout-icon {
+        @apply text-green-400;
+    }
+
+    /* Tip Callout */
+    .prose-docs .callout.tip {
+        @apply border-purple-500 bg-purple-500/5;
+    }
+
+    .prose-docs .callout.tip .callout-icon {
+        @apply text-purple-400;
+    }
+
+    /* ============================================
+       KEYBOARD SHORTCUTS
+       ============================================ */
+    .prose-docs kbd {
+        @apply px-2 py-1 text-xs font-mono bg-slate-800 border border-slate-700 rounded shadow-sm text-slate-300;
+        box-shadow: 0 1px 0 1px rgb(0 0 0 / 0.2), 0 2px 0 0 rgb(255 255 255 / 0.05);
+    }
+
+    /* ============================================
+       DETAILS & SUMMARY (Accordions)
+       ============================================ */
+    .prose-docs details {
+        @apply my-6 p-4 rounded-lg bg-slate-900/30 border border-slate-800;
+    }
+
+    .prose-docs summary {
+        @apply cursor-pointer font-semibold text-slate-200 select-none flex items-center gap-2 transition-colors hover:text-indigo-400;
+    }
+
+    .prose-docs summary::marker {
+        @apply text-indigo-500;
+    }
+
+    .prose-docs details[open] summary {
+        @apply mb-4 pb-3 border-b border-slate-800;
+    }
+
+    .prose-docs details[open]>summary::marker {
+        @apply text-indigo-400;
+    }
+
+    /* ============================================
+       DEFINITION LISTS
+       ============================================ */
+    .prose-docs dl {
+        @apply my-6 space-y-4;
+    }
+
+    .prose-docs dt {
+        @apply font-semibold text-slate-100 mb-1;
+    }
+
+    .prose-docs dd {
+        @apply ml-6 text-slate-400 pl-4 border-l-2 border-slate-800;
+    }
+
+    /* ============================================
+       BADGES & TAGS
+       ============================================ */
+    .prose-docs .badge {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    }
+
+    .prose-docs .badge.primary {
+        @apply bg-indigo-500/10 text-indigo-400 border border-indigo-500/20;
+    }
+
+    .prose-docs .badge.success {
+        @apply bg-green-500/10 text-green-400 border border-green-500/20;
+    }
+
+    .prose-docs .badge.warning {
+        @apply bg-yellow-500/10 text-yellow-400 border border-yellow-500/20;
+    }
+
+    .prose-docs .badge.danger {
+        @apply bg-red-500/10 text-red-400 border border-red-500/20;
+    }
+
+    /* ============================================
+       FOOTNOTES
+       ============================================ */
+    .prose-docs .footnotes {
+        @apply mt-16 pt-8 border-t border-slate-800 text-sm text-slate-400;
+    }
+
+    .prose-docs .footnotes ol {
+        @apply space-y-2;
+    }
+
+    .prose-docs .footnote-ref {
+        @apply text-indigo-400 no-underline text-xs align-super;
+    }
+
+    .prose-docs .footnote-backref {
+        @apply text-indigo-400 no-underline ml-1;
+    }
+
+    /* ============================================
+       SCROLLBAR STYLING
+       ============================================ */
+    .prose-docs pre::-webkit-scrollbar {
+        @apply h-2;
+    }
+
+    .prose-docs pre::-webkit-scrollbar-track {
+        @apply bg-slate-950 rounded;
+    }
+
+    .prose-docs pre::-webkit-scrollbar-thumb {
+        @apply bg-slate-700 rounded hover:bg-slate-600;
+    }
+
+    /* ============================================
+       PRINT STYLES
+       ============================================ */
+    @media print {
+        .prose-docs {
+            @apply text-black;
+        }
+
+        .prose-docs h1,
+        .prose-docs h2,
+        .prose-docs h3,
+        .prose-docs h4,
+        .prose-docs h5,
+        .prose-docs h6 {
+            @apply text-black break-after-avoid;
+        }
+
+        .prose-docs pre,
+        .prose-docs blockquote {
+            @apply break-inside-avoid;
+        }
+    }
+
+    /* ============================================
+       RESPONSIVE ADJUSTMENTS
+       ============================================ */
+    @media (max-width: 640px) {
+        .prose-docs {
+            font-size: 15px;
+        }
+
+        .prose-docs h1 {
+            @apply text-3xl;
+        }
+
+        .prose-docs h2 {
+            @apply text-2xl;
+        }
+
+        .prose-docs h3 {
+            @apply text-xl;
+        }
+
+        .prose-docs table {
+            @apply text-xs;
+        }
+
+        .prose-docs pre {
+            @apply p-4;
+        }
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+@layer utilities {
+    .text-gradient {
+        background: linear-gradient(135deg, #a78bfa 0%, #818cf8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .text-gradient-alt {
+        background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .glow-sm {
+        box-shadow: 0 0 10px rgb(99 102 241 / 0.3);
+    }
+
+    .glow-md {
+        box-shadow: 0 0 20px rgb(99 102 241 / 0.4);
+    }
+
+    .glow-lg {
+        box-shadow: 0 0 30px rgb(99 102 241 / 0.5);
+    }
+}
