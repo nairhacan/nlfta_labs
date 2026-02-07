@@ -1,7 +1,11 @@
 import { CodeBlock, InlineCode } from "./CodeBlock";
 import Link from "next/link";
-import type { MDXComponents } from "mdx/types";
-import type { ComponentPropsWithoutRef } from "react";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
+
+// Define MDXComponents type locally to avoid missing dependency issues
+type MDXComponents = {
+    [key: string]: React.ComponentType<any> | string;
+};
 
 // Enhanced MDX Components for NLFTs Documentation
 export function useMDXComponents(): MDXComponents {
