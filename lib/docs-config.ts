@@ -19,7 +19,7 @@ export const DOCS_NAVIGATION: NavItem[] = [
     {
         title: "Contribution",
         items: [
-            { title: "Cara Berkontribusi", href: "/docs/contribution/cara_berkontribusi" },
+            { title: "Panduan Berkontribusi", href: "/docs/contribution/panduan_berkontribusi" },
             { title: "Persyaratan Teknis", href: "/docs/contribution/persyaratan_teknis" },
         ],
     }

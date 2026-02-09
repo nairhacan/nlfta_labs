@@ -129,11 +129,11 @@ export default function TeamsPage() {
                                             className="flex items-center justify-center gap-3 py-3.5 rounded-2xl bg-indigo-600 text-white text-xs font-bold hover:bg-indigo-500 hover:shadow-[0_10px_30px_rgba(79,70,229,0.3)] transition-all duration-500"
                                         >
                                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18" /></svg>
-                                            Portfolio
+                                            Site
                                         </Link>
                                     ) : (
                                         <div className="flex items-center justify-center py-3.5 rounded-2xl bg-white/5 border border-white/5 text-[10px] font-bold text-slate-600 cursor-not-allowed uppercase tracking-widest">
-                                            Private
+                                            Q.E.D
                                         </div>
                                     )}
                                 </div>
