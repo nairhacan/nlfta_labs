@@ -7,7 +7,7 @@ export const metadata: Metadata = {
         template: "%s | NLFTs Docs",
         default: "Documentation | NLFTs Protocol",
     },
-    description: "Official guide for the NLFTs Protocol. Built by engineers, for engineers.",
+    description: "Panduan resmi untuk Protokol NLFTs. Dibuat oleh para insinyur, untuk para insinyur",
 };
 
 export default function DocsLayout({
@@ -15,37 +15,32 @@ export default function DocsLayout({
 }: {
     children: React.ReactNode;
 }) {
+    const breadcrumbJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://nlfts.dev',
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Documentation',
+                item: 'https://nlfts.dev/docs',
+            },
+        ],
+    };
+
     return (
         <DocsLayoutWrapper>
-            <div className="flex min-h-screen bg-slate-950 text-slate-200 selection:bg-indigo-500/30 font-sans overflow-x-hidden antialiased">
-                {/* Background Grid Pattern */}
-                <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.015]">
-                    <div className="absolute inset-0"
-                        style={{
-                            backgroundImage: `
-                                 linear-gradient(to right, rgb(99 102 241 / 0.1) 1px, transparent 1px),
-                                 linear-gradient(to bottom, rgb(99 102 241 / 0.1) 1px, transparent 1px)
-                             `,
-                            backgroundSize: '80px 80px'
-                        }}>
-                    </div>
-                </div>
-
-                {/* Decorative Elements */}
-                <div className="fixed inset-0 pointer-events-none z-0">
-                    {/* Vertical accent lines */}
-                    <div className="absolute top-0 left-72 w-px h-full bg-gradient-to-b from-transparent via-indigo-500/20 to-transparent"></div>
-                    <div className="absolute top-0 right-64 w-px h-full bg-gradient-to-b from-transparent via-purple-500/10 to-transparent hidden xl:block"></div>
-
-                    {/* Horizontal accent lines */}
-                    <div className="absolute top-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-500/10 to-transparent"></div>
-                    <div className="absolute bottom-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/10 to-transparent"></div>
-
-                    {/* Glow spots */}
-                    <div className="absolute top-[10%] right-[20%] w-96 h-96 bg-indigo-500/[0.02] blur-[120px] rounded-full"></div>
-                    <div className="absolute bottom-[20%] left-[15%] w-80 h-80 bg-purple-500/[0.015] blur-[100px] rounded-full"></div>
-                </div>
-
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+            />
+            <div className="flex min-h-screen text-slate-200 selection:bg-indigo-500/30 font-sans overflow-x-hidden antialiased">
                 {/* Left Navigation */}
                 <DocsSidebar />
 

@@ -91,12 +91,11 @@ export default function JoinSection() {
     return (
         <section
             ref={sectionRef}
-            className="relative min-h-[80vh] bg-slate-950 py-32 px-6 overflow-hidden flex flex-col justify-center border-t border-white/5"
+            className="relative min-h-[80vh] bg-transparent py-32 px-6 overflow-hidden flex flex-col justify-center"
             id='JoinSection'
         >
             {/* Background Ornaments */}
-            <div className="join-bg-glow absolute -top-24 -left-24 w-[600px] h-[600px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none" />
-            <div className="join-bg-glow absolute -bottom-24 -right-24 w-[600px] h-[600px] bg-emerald-500/10 blur-[150px] rounded-full pointer-events-none" />
+            {/* Background Ornaments - Removed for seamless bg */}
 
             <div className="relative z-10 max-w-7xl mx-auto w-full">
                 {/* HEADER */}

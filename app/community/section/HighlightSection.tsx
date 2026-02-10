@@ -105,34 +105,13 @@ export default function HighlightSection() {
     return (
         <section
             ref={sectionRef}
-            className="relative min-h-[90vh] bg-slate-950 py-32 overflow-hidden flex flex-col justify-center"
+            className="relative min-h-[90vh] bg-transparent py-32 overflow-hidden flex flex-col justify-center"
         >
             {/* Background Parallax Patterns */}
-            <div className="highlight-bg-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/10 blur-[150px] rounded-full pointer-events-none" />
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay" />
-
-            <div className="relative z-10 max-w-7xl mx-auto px-6 mb-20 text-center">
-                <div className="highlight-header">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-violet-500/20 bg-violet-500/5 mb-6">
-                        <span className="text-[10px] font-mono font-bold tracking-widest text-violet-400 uppercase">
-                            Member Highlights
-                        </span>
-                    </div>
-                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                        Loved by the <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-violet-500 italic">Best Architects</span>
-                    </h2>
-                    <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-                        Join thousands of developers building the next generation of global infrastructure.
-                    </p>
-                </div>
-            </div>
-
+            {/* Background Parallax Patterns - Removed for seamless bg */}
             {/* INFINITE CAROUSEL CONTAINER */}
-            <div className="relative w-full overflow-hidden select-none">
-                {/* Shadow Overlays for fade effect */}
-                <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-slate-950 to-transparent z-20 pointer-events-none" />
-                <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-slate-950 to-transparent z-20 pointer-events-none" />
-
+            <div className="relative w-full overflow-hidden select-none" style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}>
+                {/*  Cards  */}
                 <div
                     ref={sliderRef}
                     className="flex gap-6 w-max px-6"

@@ -37,48 +37,46 @@ export default function HeroSection() {
       id="HeroSection"
     >
       {/* BASE */}
-      <div className="absolute inset-0 bg-[#070914]" />
+      {/* BASE - Transparent to show global background */}
+      <div className="absolute inset-0 bg-transparent" />
 
-      {/* AMBIENT GLOW */}
-      <div className="ambient-glow absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-blue-600/20 blur-[160px]" />
+      {/* AMBIENT GLOW - Removed for seamless bg */}
 
-      {/* GRADIENT DEPTH */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#070914]/50 to-[#070914]" />
+      {/* GRADIENT DEPTH - Removed for seamless bg */}
 
-      {/* NOISE */}
-      <div className="absolute inset-0 opacity-[0.06] mix-blend-overlay pointer-events-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJuIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC45Ii8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbHRlcj0idXJsKCNuKSIgb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]" />
+      {/* NOISE - Removed for seamless bg */}
 
       {/* CONTENT */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         {/* COMMUNITY BADGE */}
-      {/* COMMUNITY BADGE */}
-<div className="hero-item inline-flex items-center gap-4 px-6 py-2 mb-10 text-sm text-blue-200 border border-blue-500/20 rounded-full backdrop-blur">
-  
-  {/* AVATAR STACK */}
-  <div className="flex -space-x-3">
-    <img
-      src="https://avatars.githubusercontent.com/u/226198461?v=4"
-      alt="member"
-      className="w-8 h-8 rounded-full border border-[#070914] object-cover"
-    />
-    <img
-      src="https://avatars.githubusercontent.com/u/228851591?v=4"
-      alt="member"
-      className="w-8 h-8 rounded-full border border-[#070914] object-cover"
-    />
-    <img
-      src="https://avatars.githubusercontent.com/u/228840381?s=130&v=4"
-      alt="member"
-      className="w-8 h-8 rounded-full border border-[#070914] object-cover"
-    />
-    <div className="w-8 h-8 rounded-full bg-blue-600/80 text-[11px] flex items-center justify-center text-white border border-[#070914]">
-      +21
-    </div>
-  </div>
+        {/* COMMUNITY BADGE */}
+        <div className="hero-item inline-flex items-center gap-4 px-6 py-2 mb-10 text-sm text-blue-200 border border-blue-500/20 rounded-full backdrop-blur">
 
-  {/* TEXT */}
-  <span>24+ builders aktif minggu ini</span>
-</div>
+          {/* AVATAR STACK */}
+          <div className="flex -space-x-3">
+            <img
+              src="https://avatars.githubusercontent.com/u/226198461?v=4"
+              alt="member"
+              className="w-8 h-8 rounded-full border border-[#070914] object-cover"
+            />
+            <img
+              src="https://avatars.githubusercontent.com/u/228851591?v=4"
+              alt="member"
+              className="w-8 h-8 rounded-full border border-[#070914] object-cover"
+            />
+            <img
+              src="https://avatars.githubusercontent.com/u/228840381?s=130&v=4"
+              alt="member"
+              className="w-8 h-8 rounded-full border border-[#070914] object-cover"
+            />
+            <div className="w-8 h-8 rounded-full bg-blue-600/80 text-[11px] flex items-center justify-center text-white border border-[#070914]">
+              +21
+            </div>
+          </div>
+
+          {/* TEXT */}
+          <span>24+ builders aktif minggu ini</span>
+        </div>
 
 
 

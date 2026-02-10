@@ -129,13 +129,7 @@ export default function GetStartedSection() {
   }, []);
 
   return (
-    <div ref={sectionRef} className="relative bg-black py-32 overflow-hidden">
-      {/* Minimal background */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(29,78,216,0.03),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.02),transparent_50%)]" />
-      </div>
-
+    <div ref={sectionRef} className="relative py-32 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div ref={headerRef} className="mb-12 opacity-0">
@@ -170,9 +164,9 @@ export default function GetStartedSection() {
               <p className="text-lg text-gray-400 leading-relaxed">
                 NLFTs is a community-driven frontend library platform that makes it easy to get started with<span className="text-white font-semibold"> web development</span> quickly.
               </p>
-              
+
               <p className="text-lg text-gray-400 leading-relaxed">
-                Jumpstart your Next.js development with pre-built solutions from Vercel and 
+                Jumpstart your Next.js development with pre-built solutions from Vercel and
                 our community.
               </p>
 
@@ -182,10 +176,10 @@ export default function GetStartedSection() {
                   className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition-all duration-200 group"
                 >
                   <span>Deploy a Template on Vercel</span>
-                  <svg 
-                    className="w-4 h-4 group-hover:translate-x-1 transition-transform" 
-                    fill="none" 
-                    stroke="currentColor" 
+                  <svg
+                    className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -202,14 +196,14 @@ export default function GetStartedSection() {
                 <div
                   key={template.id}
                   className="group relative opacity-0"
-                  style={{ 
+                  style={{
                     transform: `translateX(${index * 12}px) translateY(${index * -8}px)`,
                   }}
                 >
                   <div className="relative bg-gradient-to-br from-white/[0.08] to-white/[0.03] backdrop-blur-sm rounded-xl border border-white/[0.08] overflow-hidden hover:border-white/[0.15] transition-all duration-300">
                     {/* Subtle hover glow */}
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-blue-500/0 group-hover:from-blue-500/5 group-hover:to-transparent transition-all duration-500" />
-                    
+
                     <div className="relative p-6">
                       <div className="flex items-start justify-between gap-4 mb-3">
                         <h3 className="text-lg font-bold text-white group-hover:text-blue-300 transition-colors">
@@ -219,7 +213,7 @@ export default function GetStartedSection() {
                           {template.tag}
                         </span>
                       </div>
-                      
+
                       <p className="text-sm text-gray-500 leading-relaxed mb-4">
                         {template.description}
                       </p>
@@ -230,10 +224,10 @@ export default function GetStartedSection() {
                           className="text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1.5 group/link"
                         >
                           <span>View Template</span>
-                          <svg 
-                            className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" 
-                            fill="none" 
-                            stroke="currentColor" 
+                          <svg
+                            className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform"
+                            fill="none"
+                            stroke="currentColor"
                             viewBox="0 0 24 24"
                           >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

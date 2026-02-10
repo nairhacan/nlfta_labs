@@ -119,17 +119,11 @@ export default function TechStackSection() {
     return (
         <section
             ref={sectionRef}
-            className="relative min-h-[180vh] bg-slate-950 overflow-hidden py-40 flex flex-col items-center justify-center select-none"
+            className="relative min-h-[180vh] bg-transparent overflow-hidden py-40 flex flex-col items-center justify-center select-none"
             id="tech-stack"
         >
-            {/* BACKGROUND */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_#3b82f610_0%,_transparent_75%)] pointer-events-none" />
-                <div className="absolute inset-0 opacity-[0.2] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay" />
-
-                <div className="absolute bottom-0 w-full h-[70%] bg-[linear-gradient(to_bottom,transparent,rgba(30,41,59,0.5))] [perspective:1200px] overflow-hidden">
-                    <div className="absolute inset-0 [transform:rotateX(70deg)] bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:50px_50px] origin-bottom" />
-                </div>
+                {/* BACKGROUND - Removed for seamless bg */}
             </div>
 
             {/* HEADER */}
@@ -238,7 +232,7 @@ export default function TechStackSection() {
             </div>
 
             {/* FOOTER STATS */}
-            <div className="relative z-30 mt-56 pt-24 border-t border-white/5 w-full max-w-7xl px-6 grid grid-cols-2 md:grid-cols-4 gap-12 opacity-80 hover:opacity-100 transition-opacity duration-1000">
+            <div className="relative z-30 mt-56 pt-24 w-full max-w-7xl px-6 grid grid-cols-2 md:grid-cols-4 gap-12 opacity-80 hover:opacity-100 transition-opacity duration-1000">
                 {[
                     { label: 'Compute Cycle', val: 'Zen-4', desc: 'Kernel processing' },
                     { label: 'Latency Map', val: 'Edge-V', desc: 'Global sub-ms hop' },

@@ -11,7 +11,7 @@
 }
 
 body {
-    @apply bg-slate-950 text-slate-200 antialiased;
+    @apply text-slate-200 antialiased;
     font-family: var(--font-geist-sans), ui-sans-serif, system-ui;
 }
 
@@ -52,7 +52,7 @@ body {
     }
 
     body {
-        @apply bg-slate-950 text-slate-200;
+        @apply text-slate-200;
         font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;

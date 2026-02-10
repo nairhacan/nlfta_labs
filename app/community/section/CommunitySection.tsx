@@ -121,18 +121,9 @@ export default function CommunitySection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen bg-[#020617] py-24 md:py-32 px-4 md:px-8 overflow-hidden"
+      className="relative min-h-screen bg-transparent py-24 md:py-32 px-4 md:px-8 overflow-hidden"
     >
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 blur-[130px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-violet-600/10 blur-[120px] rounded-full pointer-events-none" />
-
-      {/* Grid Pattern Background */}
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay" />
-      <div
-        className="absolute inset-0 opacity-[0.05] pointer-events-none"
-        style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}
-      />
+      {/* Background Decorative Elements - Removed */}
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* HEADER */}
@@ -311,7 +302,7 @@ export default function CommunitySection() {
                 </div>
               </div>
 
-              <div className="p-4 bg-black/10 border-t border-white/5">
+              <div className="p-4 bg-black/10 ">
                 <Link href="/teams" className="w-full block text-center py-3.5 text-[10px] font-bold text-slate-400 hover:text-white transition-all duration-300 font-mono uppercase tracking-[0.2em] bg-white/5 hover:bg-white/10 rounded-xl border border-white/5">
                   View All Teams
                 </Link>

@@ -147,11 +147,10 @@ export default function EventsSection() {
     return (
         <section
             ref={sectionRef}
-            className="relative min-h-screen bg-slate-950 py-32 px-6 overflow-hidden flex flex-col items-center"
+            className="relative min-h-screen bg-transparent py-32 px-6 overflow-hidden flex flex-col items-center"
         >
             {/* Background Decorative Elem */}
-            <div className="events-bg-orb absolute top-1/4 right-0 w-[500px] h-[500px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
-            <div className="events-bg-orb absolute bottom-0 left-0 w-[400px] h-[400px] bg-violet-600/5 blur-[100px] rounded-full pointer-events-none" />
+            {/* Background Decorative Elem - Removed for seamless bg */}
 
             <div className="relative z-10 max-w-7xl mx-auto w-full">
                 {/* HEADER */}

@@ -141,27 +141,14 @@ export default function FeaturesSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-screen bg-[#0b1220] py-20 md:py-32 px-4 md:px-6 overflow-hidden"
+      className="relative w-full min-h-screen bg-transparent py-20 md:py-32 px-4 md:px-6 overflow-hidden"
 
     >
-      {/* Dark Background with subtle gradients */}
-      <div className="absolute inset-0 bg-gradient-to-b bg-gradient-to-b from-[#0b1220] via-[#0e1a33] to-[#050814]" />
-      
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `linear-gradient(to right, #3b82f6 1px, transparent 1px),
-                            linear-gradient(to bottom, #3b82f6 1px, transparent 1px)`,
-            backgroundSize: '80px 80px',
-          }}
-        />
-      </div>
+      {/* Dark Background with subtle gradients - Removed */}
 
-      {/* Gradient blurs */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 blur-[120px] rounded-full" />
+      {/* Subtle grid pattern - Removed for seamless bg */}
+
+      {/* Gradient blurs - Removed */}
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header with CSS animations */}
@@ -172,11 +159,11 @@ export default function FeaturesSection() {
               Community Platform
             </span>
           </div>
-          
+
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight px-4 animate-slide-up animation-delay-100">
             Dibangun untuk Skala Besar
           </h2>
-          
+
           <p className="text-base md:text-xl text-gray-400 max-w-3xl mx-auto px-4 mb-12 animate-fade-in animation-delay-200">
             Semua yang kamu butuhkan untuk membangun, berkolaborasi, dan berkembang bersama dalam satu ekosistem terintegrasi
           </p>
@@ -344,11 +331,10 @@ export default function FeaturesSection() {
                           className={`flex ${msg.side === 'right' ? 'justify-end' : 'justify-start'}`}
                         >
                           <div
-                            className={`px-4 py-2 rounded-lg text-xs ${
-                              msg.side === 'right'
-                                ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
-                                : 'bg-gray-800 text-gray-400 border border-gray-700'
-                            }`}
+                            className={`px-4 py-2 rounded-lg text-xs ${msg.side === 'right'
+                              ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
+                              : 'bg-gray-800 text-gray-400 border border-gray-700'
+                              }`}
                             style={{ width: msg.width }}
                           >
                             {msg.text}
