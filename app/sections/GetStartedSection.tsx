@@ -9,32 +9,33 @@ gsap.registerPlugin(ScrollTrigger);
 const templates = [
   {
     id: 1,
-    title: 'Next.js Commerce',
-    description: 'An all-in-one starter kit for high-performance e-commerce sites',
-    tag: 'E-commerce',
+    title: 'Website Launch',
+    description:
+      'Paket lengkap untuk meluncurkan website modern yang cepat, responsif, dan siap SEO — dari desain hingga deploy.',
+    tag: 'Website Modern',
   },
   {
     id: 2,
-    title: 'Image Gallery',
-    description: 'An image gallery built with Next.js and Cloudinary',
-    tag: 'Media',
+    title: 'Web3 Launchpad',
+    description:
+      'Pendampingan integrasi blockchain/Web3 yang terarah dengan dokumentasi jelas agar tim Anda mudah melanjutkan.',
+    tag: 'Web3 & Blockchain',
   },
   {
     id: 3,
-    title: 'Next.js Boilerplate',
-    description: 'A Next.js starter from create-next-app',
-    tag: 'Starter',
+    title: 'DX Partnership',
+    description:
+      'Kerja sama jangka panjang untuk merapikan arsitektur, tooling, dan dokumentasi agar tim developer bekerja lebih tenang.',
+    tag: 'Developer Experience',
   },
 ];
 
 const categories = [
-  { name: 'Starter', href: '/templates/starter' },
-  { name: 'Ecommerce', href: '/templates/ecommerce' },
-  { name: 'Blog', href: '/templates/blog' },
-  { name: 'AI', href: '/templates/ai' },
-  { name: 'Portfolio', href: '/templates/portfolio' },
-  { name: 'SaaS', href: '/templates/saas' },
-  { name: 'Multi-tenant', href: '/templates/multi-tenant' },
+  { name: 'Pelajar & Mahasiswa' },
+  { name: 'Guru & Pengajar' },
+  { name: 'Karyawan & Profesional' },
+  { name: 'Pebisnis & Founder' },
+  { name: 'Pengembang & Tim Tech' },
 ];
 
 export default function GetStartedSection() {
@@ -129,53 +130,101 @@ export default function GetStartedSection() {
   }, []);
 
   return (
-    <div ref={sectionRef} className="relative py-32 overflow-hidden">
+    <section
+      ref={sectionRef}
+      id="mulai-bersama-nlfts"
+      aria-labelledby="get-started-heading"
+      className="relative py-24 md:py-32 overflow-hidden"
+    >
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <div ref={headerRef} className="mb-12 opacity-0">
-          <h2 className="text-5xl lg:text-6xl font-black text-white mb-3">
-            Mulai dalam hitungan detik
+        <div ref={headerRef} className="mb-10 md:mb-12 opacity-0">
+          <h2
+            id="get-started-heading"
+            className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-3 md:mb-4"
+          >
+            Cara mulai bersama NLFTs
           </h2>
-          <p className="text-xl text-gray-500">
-            Buat keinginmu jadi nyata
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl">
+            Dari ide hingga deploy, kami dampingi Anda lewat alur yang jelas, dokumentasi rapi, dan komunitas yang
+            selalu bisa diajak diskusi.
           </p>
         </div>
 
-        {/* Categories Pills - Navigation */}
-        <div ref={categoriesRef} className="flex flex-wrap gap-3 mb-16 pb-8 border-b border-white/[0.06]">
+        {/* Audience Pills - Who we help */}
+        <div
+          ref={categoriesRef}
+          className="flex flex-wrap gap-3 mb-12 md:mb-16 pb-6 md:pb-8 border-b border-white/[0.06]"
+          aria-label="Kelompok yang biasa kami bantu"
+        >
           {categories.map((category) => (
-            <a
+            <button
               key={category.name}
-              href={category.href}
-              className="group px-5 py-2 bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.06] hover:border-white/[0.12] rounded-full transition-all duration-300 opacity-0"
+              type="button"
+              className="group px-4 sm:px-5 py-2 bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.06] hover:border-white/[0.12] rounded-full transition-all duration-300 opacity-0"
             >
-              <span className="text-sm font-medium text-gray-400 group-hover:text-white transition-colors">
+              <span className="text-xs sm:text-sm font-medium text-gray-400 group-hover:text-white transition-colors text-left">
                 {category.name}
               </span>
-            </a>
+            </button>
           ))}
         </div>
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left: Text Content */}
+          {/* Left: Text Content - 3-step process */}
           <div ref={contentRef} className="opacity-0">
             <div className="space-y-6">
-              <p className="text-lg text-gray-400 leading-relaxed">
-                NLFTs is a community-driven frontend library platform that makes it easy to get started with<span className="text-white font-semibold"> web development</span> quickly.
+              <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
+                Kami menggabungkan konsultasi, eksekusi teknis, dan pendampingan komunitas dalam satu alur yang
+                mudah diikuti — cocok untuk pelajar, pengajar, tim internal perusahaan, maupun pemilik bisnis.
               </p>
 
-              <p className="text-lg text-gray-400 leading-relaxed">
-                Jumpstart your Next.js development with pre-built solutions from Vercel and
-                our community.
-              </p>
+              <ol className="space-y-4 text-sm sm:text-base">
+                <li className="flex gap-3">
+                  <span className="mt-1 flex h-7 w-7 items-center justify-center rounded-full bg-blue-500/20 text-xs font-semibold text-blue-300">
+                    1
+                  </span>
+                  <div>
+                    <h3 className="text-white font-semibold mb-1">Konsultasi kebutuhan & audit awal</h3>
+                    <p className="text-gray-500 leading-relaxed">
+                      Kami pahami konteks Anda: siapa audiensnya, stack yang digunakan, serta kendala saat ini —
+                      lalu kami usulkan pendekatan teknis dan desain yang realistis.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-1 flex h-7 w-7 items-center justify-center rounded-full bg-blue-500/20 text-xs font-semibold text-blue-300">
+                    2
+                  </span>
+                  <div>
+                    <h3 className="text-white font-semibold mb-1">Rancang arsitektur, UI, & dokumentasi</h3>
+                    <p className="text-gray-500 leading-relaxed">
+                      Kami susun struktur halaman, komponen, integrasi Web3 (jika perlu), serta dokumentasi yang
+                      rapi agar website mudah dirawat dan dikembangkan.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-1 flex h-7 w-7 items-center justify-center rounded-full bg-blue-500/20 text-xs font-semibold text-blue-300">
+                    3
+                  </span>
+                  <div>
+                    <h3 className="text-white font-semibold mb-1">Implementasi, review, & pendampingan</h3>
+                    <p className="text-gray-500 leading-relaxed">
+                      Proses build dilakukan dengan review berkala, uji performa, dan akses ke komunitas Discord
+                      untuk tanya jawab teknis setelah project berjalan.
+                    </p>
+                  </div>
+                </li>
+              </ol>
 
-              <div className="pt-6">
+              <div className="pt-4">
                 <a
-                  href="/templates"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition-all duration-200 group"
+                  href="#beranda"
+                  className="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition-all duration-200 group text-sm sm:text-base"
                 >
-                  <span>Deploy a Template on Vercel</span>
+                  <span>Diskusikan proyek dengan tim NLFTs</span>
                   <svg
                     className="w-4 h-4 group-hover:translate-x-1 transition-transform"
                     fill="none"
@@ -189,7 +238,7 @@ export default function GetStartedSection() {
             </div>
           </div>
 
-          {/* Right: Template Cards Stack */}
+          {/* Right: Service Packages Stack */}
           <div ref={templatesRef} className="relative">
             <div className="space-y-4">
               {templates.map((template, index) => (
@@ -204,9 +253,9 @@ export default function GetStartedSection() {
                     {/* Subtle hover glow */}
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-blue-500/0 group-hover:from-blue-500/5 group-hover:to-transparent transition-all duration-500" />
 
-                    <div className="relative p-6">
+                    <div className="relative p-5 sm:p-6">
                       <div className="flex items-start justify-between gap-4 mb-3">
-                        <h3 className="text-lg font-bold text-white group-hover:text-blue-300 transition-colors">
+                        <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-blue-300 transition-colors">
                           {template.title}
                         </h3>
                         <span className="px-3 py-1 bg-black/40 border border-white/[0.08] text-gray-400 text-xs font-medium rounded-full whitespace-nowrap">
@@ -220,10 +269,10 @@ export default function GetStartedSection() {
 
                       <div className="flex items-center gap-3">
                         <a
-                          href={`/templates/${template.id}`}
+                          href="#mulai-bersama-nlfts"
                           className="text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1.5 group/link"
                         >
-                          <span>View Template</span>
+                          <span>Lihat detail paket</span>
                           <svg
                             className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform"
                             fill="none"
@@ -245,6 +294,6 @@ export default function GetStartedSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DocsSidebar, DocsRightSidebar } from "@/app/assets/fragments/DocsUI";
+import { DocsSidebar, DocsRightSidebar, DocsParentTabs } from "@/app/assets/fragments/DocsUI";
 import { DocsLayoutWrapper } from "./components/DocsLayoutWrapper";
 
 export const metadata: Metadata = {
@@ -46,10 +46,17 @@ export default function DocsLayout({
 
                 {/* Main Content Area */}
                 <main className="flex-1 lg:ml-72 xl:mr-64 min-h-screen relative z-10 pt-16">
-                    {/* Top Gradient Glow */}
-                    <div className="absolute top-16 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent"></div>
+                    {/* Sticky Parent Tabs slightly below global navbar for breathing room */}
+                    <div className="sticky top-[4.5rem] z-30 border-b border-slate-900/60 bg-slate-950/85 backdrop-blur-md">
+                        <div className="max-w-3xl mx-auto px-6 sm:px-8 lg:px-12 py-1.5">
+                            <DocsParentTabs />
+                        </div>
+                    </div>
 
-                    <div className="max-w-3xl mx-auto pt-12 pb-32 px-6 sm:px-8 lg:px-12">
+                    {/* Top Gradient Glow */}
+                    <div className="absolute top-[5.75rem] left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent"></div>
+
+                    <div className="max-w-3xl mx-auto pt-8 md:pt-10 pb-32 px-6 sm:px-8 lg:px-12">
                         {/* Header Accent */}
                         <div className="mb-12 flex items-center gap-3">
                             <div className="h-1 w-16 bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 rounded-full"></div>

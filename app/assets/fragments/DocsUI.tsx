@@ -2,8 +2,47 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { DOCS_NAVIGATION } from "@/lib/docs-config";
+import { usePathname, useRouter } from "next/navigation";
+import { DOCS_NAVIGATION, type NavItem } from "@/lib/docs-config";
+import {
+    ShieldCheck,
+    Users,
+    FileText,
+    BookText,
+    CircleDot,
+} from "lucide-react";
+
+const parentSections = DOCS_NAVIGATION.filter(
+    (item) => item.items && item.items.length
+);
+
+function getActiveParentByPath(pathname: string): NavItem | undefined {
+    for (const section of parentSections) {
+        if (section.items?.some((item) => item.href === pathname)) {
+            return section;
+        }
+    }
+    return undefined;
+}
+
+function ParentIcon({ title }: { title: string }) {
+    const lower = title.toLowerCase();
+    if (lower.includes("kebijakan") || lower.includes("privasi")) {
+        return <ShieldCheck className="w-4 h-4 text-indigo-300" aria-hidden="true" />;
+    }
+    if (lower.includes("contribution")) {
+        return <Users className="w-4 h-4 text-indigo-300" aria-hidden="true" />;
+    }
+    return <BookText className="w-4 h-4 text-indigo-300" aria-hidden="true" />;
+}
+
+function ChildIcon() {
+    return <CircleDot className="w-3.5 h-3.5 text-indigo-300" aria-hidden="true" />;
+}
+
+function IntroIcon() {
+    return <FileText className="w-4 h-4 text-indigo-300" aria-hidden="true" />;
+}
 
 export function DocsSidebar() {
     const pathname = usePathname();
@@ -13,54 +52,88 @@ export function DocsSidebar() {
         setIsOpen(false);
     }, [pathname]);
 
-    const NavContent = () => (
-        <nav className="flex-1 px-6 py-8 space-y-8 overflow-y-auto custom-scrollbar relative z-10">
-            {DOCS_NAVIGATION.map((section, idx) => (
-                <div key={idx}>
-                    {section.isSeparator ? (
-                        <h4 className="px-3 mb-4 text-[10px] font-black uppercase tracking-[0.25em] text-slate-500 border-l border-white/10 ml-1 pl-4">
-                            {section.title}
-                        </h4>
-                    ) : section.items ? (
-                        <div className="space-y-3">
-                            <h4 className="px-3 text-sm font-bold text-white flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 bg-indigo-500 block"></span>
-                                {section.title}
-                            </h4>
-                            <div className="grid gap-1 pl-3 border-l border-white/5 ml-3.5">
-                                {section.items.map((item, idy) => {
-                                    const isActive = pathname === item.href;
-                                    return (
-                                        <Link
-                                            key={idy}
-                                            href={item.href || "#"}
-                                            className={`px-4 py-2 text-sm rounded-lg transition-colors flex items-center justify-between group ${isActive
-                                                ? "bg-indigo-600 text-white font-bold"
-                                                : "text-slate-400 hover:text-white hover:bg-white/5"
-                                                }`}
-                                        >
-                                            <span>{item.title}</span>
-                                            {isActive && <div className="w-1 h-4 bg-white rounded-full"></div>}
-                                        </Link>
-                                    );
-                                })}
+    const NavContent = () => {
+        const activeParent = getActiveParentByPath(pathname);
+        const hasActiveParent = Boolean(activeParent);
+
+        return (
+            <nav className="flex-1 px-6 py-8 space-y-8 overflow-y-auto custom-scrollbar relative z-10">
+                {DOCS_NAVIGATION.map((section, idx) => {
+                    // Section label (e.g. "Permulaan")
+                    if (section.isSeparator) {
+                        return (
+                            <div key={idx}>
+                                <h4 className="px-3 mb-4 text-[10px] font-black uppercase tracking-[0.25em] text-slate-500 border-l border-white/10 ml-1 pl-4">
+                                    {section.title}
+                                </h4>
                             </div>
+                        );
+                    }
+
+                    // Sections with children (parent categories)
+                    if (section.items && section.items.length) {
+                        const shouldShow =
+                            !hasActiveParent || activeParent?.title === section.title;
+                        if (!shouldShow) return null;
+
+                        return (
+                            <div key={idx} className="space-y-3">
+                                <h4 className="px-3 text-sm font-bold text-white flex items-center gap-2">
+                                    <ParentIcon title={section.title} />
+                                    <span>{section.title}</span>
+                                </h4>
+                                <div className="grid gap-1 pl-3 border-l border-white/5 ml-3.5">
+                                    {section.items.map((item, idy) => {
+                                        const isActive = pathname === item.href;
+                                        return (
+                                            <Link
+                                                key={idy}
+                                                href={item.href || "#"}
+                                                className={`px-4 py-2 text-sm rounded-lg transition-colors flex items-center justify-between group ${isActive
+                                                    ? "bg-indigo-600 text-white font-bold"
+                                                    : "text-slate-400 hover:text-white hover:bg-white/5"
+                                                    }`}
+                                            >
+                                                <span className="flex items-center gap-2">
+                                                    <ChildIcon />
+                                                    <span>{item.title}</span>
+                                                </span>
+                                                {isActive && (
+                                                    <div className="w-1 h-4 bg-white rounded-full"></div>
+                                                )}
+                                            </Link>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        );
+                    }
+
+                    // Top-level single links (e.g. Introduction)
+                    return (
+                        <div key={idx}>
+                            <Link
+                                href={section.href || "#"}
+                                className={`flex items-center gap-3 px-3 py-2 text-sm font-bold transition-all border-l-2 ${pathname === section.href
+                                    ? "text-white border-indigo-500 bg-indigo-500/10"
+                                    : "text-slate-400 border-transparent hover:text-white hover:border-white/20"
+                                    }`}
+                            >
+                                {section.title === "Introduction" ? (
+                                    <>
+                                        <IntroIcon />
+                                        <span>{section.title}</span>
+                                    </>
+                                ) : (
+                                    <span>{section.title}</span>
+                                )}
+                            </Link>
                         </div>
-                    ) : (
-                        <Link
-                            href={section.href || "#"}
-                            className={`flex items-center gap-3 px-3 py-2 text-sm font-bold transition-all border-l-2 ${pathname === section.href
-                                ? "text-white border-indigo-500 bg-indigo-500/10"
-                                : "text-slate-400 border-transparent hover:text-white hover:border-white/20"
-                                }`}
-                        >
-                            {section.title}
-                        </Link>
-                    )}
-                </div>
-            ))}
-        </nav>
-    );
+                    );
+                })}
+            </nav>
+        );
+    };
 
     return (
         <>
@@ -114,6 +187,48 @@ export function DocsSidebar() {
                 </div>
             </aside>
         </>
+    );
+}
+
+export function DocsParentTabs() {
+    const pathname = usePathname();
+    const router = useRouter();
+
+    if (parentSections.length === 0) return null;
+
+    const activeParent = getActiveParentByPath(pathname);
+
+    const handleClick = (section: NavItem) => {
+        const firstChild = section.items?.[0];
+        if (firstChild?.href) {
+            router.push(firstChild.href);
+        }
+    };
+
+    return (
+        <nav
+            aria-label="Kategori dokumentasi utama"
+            className="flex items-center gap-4 overflow-x-auto pb-1 -mx-1 text-xs sm:text-sm"
+        >
+            {parentSections.map((section) => {
+                const isActive = activeParent?.title === section.title;
+                return (
+                    <button
+                        key={section.title}
+                        type="button"
+                        onClick={() => handleClick(section)}
+                        className={`flex-shrink-0 inline-flex items-center gap-2 px-1 pb-2 border-b-2 transition-all ${
+                            isActive
+                                ? "border-indigo-500 text-white"
+                                : "border-transparent text-slate-400 hover:text-slate-100 hover:border-slate-600/80"
+                        }`}
+                    >
+                        <ParentIcon title={section.title} />
+                        <span>{section.title}</span>
+                    </button>
+                );
+            })}
+        </nav>
     );
 }
 

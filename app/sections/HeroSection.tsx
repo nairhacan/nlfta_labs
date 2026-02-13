@@ -109,7 +109,12 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen overflow-hidden">
+    <section
+      ref={heroRef}
+      id="beranda"
+      aria-labelledby="hero-heading"
+      className="relative min-h-screen overflow-hidden"
+    >
       {/* Particle effects */}
       <div ref={particlesRef} className="absolute inset-0">
         <div className="absolute top-[20%] left-[10%] w-1 h-1 bg-blue-500/40 rounded-full blur-sm" />
@@ -126,27 +131,33 @@ export default function HeroSection() {
 
           {/* Left content */}
           <div>
-            <div ref={titleRef} className="mb-12 opacity-0">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.03] border border-white/[0.05] rounded-full mb-8 backdrop-blur-sm">
+            <div ref={titleRef} className="mb-10 md:mb-12 opacity-0">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.03] border border-white/[0.05] rounded-full mb-6 md:mb-8 backdrop-blur-sm">
                 <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
-                <span className="text-sm text-gray-400 tracking-wide">High-End Programming Community</span>
+                <span className="text-xs md:text-sm text-gray-400 tracking-wide">
+                  Developer Experience Studio & Community
+                </span>
               </div>
 
-              <h1 className="text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-[1.1]">
-                <span className="text-white">Welcome to</span>
+              <h1
+                id="hero-heading"
+                className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 md:mb-6 leading-[1.1]"
+              >
+                <span className="text-white">Bangun Web Modern</span>
                 <br />
                 <span className="bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
-                  NLFTs
+                  bersama NLFTs
                 </span>
               </h1>
             </div>
 
-            <div ref={contentRef} className="space-y-8">
-              <p className="text-xl text-gray-400 leading-relaxed max-w-xl opacity-0">
-                Platform eksklusif untuk developer yang telah melewati tahap beginner. Komunitas profesional dengan teknologi next-generation untuk development yang lebih efisien.
+            <div ref={contentRef} className="space-y-6 md:space-y-8">
+              <p className="text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed max-w-xl opacity-0">
+                NLFTs adalah rumah bagi developer, pelajar, guru, karyawan, dan pebisnis yang ingin membangun
+                website modern, cepat, dan siap skala dengan pengalaman developer yang dirancang serius.
               </p>
 
-              <div className="space-y-4 opacity-0">
+              <div className="grid sm:grid-cols-2 gap-5 opacity-0">
                 <div className="flex items-start gap-4 group">
                   <div className="mt-1 w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/10 to-blue-600/10 border border-blue-500/20 flex items-center justify-center flex-shrink-0 group-hover:border-blue-400/40 transition-colors">
                     <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,8 +165,13 @@ export default function HeroSection() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold text-lg mb-1">FTS Format API</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">Revolusi komunikasi data dengan format .FTS - interaksi Frontend-Backend yang lebih bebas dengan passive data inclusion</p>
+                    <h3 className="text-white font-semibold text-base md:text-lg mb-1">
+                      Website Modern & Cepat
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">
+                      Dari landing page sampai platform kompleks, kami rancang arsitektur, aksesibilitas, dan performa
+                      supaya stabil di semua perangkat.
+                    </p>
                   </div>
                 </div>
 
@@ -166,35 +182,46 @@ export default function HeroSection() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold text-lg mb-1">React & Vue Pixel</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">Rumah bagi Frontend Developer dengan 1000+ komponen premium untuk React & Vue yang siap pakai di era web modern</p>
+                    <h3 className="text-white font-semibold text-base md:text-lg mb-1">
+                      Integrasi Web3 & Dokumentasi
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">
+                      Integrasi blockchain/Web3 tanpa drama plus dokumentasi teknis yang rapi, sehingga tim Anda mudah
+                      memelihara dan mengembangkan.
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div className="flex gap-4 pt-4 opacity-0">
-                <button className="px-7 py-3.5 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all duration-200 hover:scale-[1.02] active:scale-95">
-                  Get Started
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 opacity-0">
+                <button className="px-7 py-3.5 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all duration-200 hover:scale-[1.02] active:scale-95 text-sm md:text-base">
+                  Konsultasi Proyek Gratis
                 </button>
-                <button className="px-7 py-3.5 bg-white/[0.03] text-white font-semibold rounded-lg border border-white/10 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-200">
-                  View Documentation
+                <button className="px-7 py-3.5 bg-white/[0.03] text-white font-semibold rounded-lg border border-white/10 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-200 text-sm md:text-base">
+                  Lihat Layanan & Komunitas
                 </button>
               </div>
 
-              <div className="flex items-center gap-12 pt-8 opacity-0">
+              <div className="flex flex-wrap items-center gap-6 sm:gap-10 pt-6 md:pt-8 opacity-0">
                 <div>
-                  <div className="text-3xl font-bold text-white mb-1">500+</div>
-                  <div className="text-xs text-gray-500 uppercase tracking-widest">Active Developers</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">500+</div>
+                  <div className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-widest">
+                    MEMBER AKTIF
+                  </div>
                 </div>
-                <div className="w-px h-12 bg-white/5" />
+                <div className="hidden sm:block w-px h-10 md:h-12 bg-white/5" />
                 <div>
-                  <div className="text-3xl font-bold text-white mb-1">1K+</div>
-                  <div className="text-xs text-gray-500 uppercase tracking-widest">Components</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">90+</div>
+                  <div className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-widest">
+                    MENTOR & PRAKTISI
+                  </div>
                 </div>
-                <div className="w-px h-12 bg-white/5" />
+                <div className="hidden sm:block w-px h-10 md:h-12 bg-white/5" />
                 <div>
-                  <div className="text-3xl font-bold text-white mb-1">2x</div>
-                  <div className="text-xs text-gray-500 uppercase tracking-widest">Faster Build</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">24/7</div>
+                  <div className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-widest">
+                    DISCORD SUPPORT
+                  </div>
                 </div>
               </div>
             </div>
