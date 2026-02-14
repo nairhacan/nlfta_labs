@@ -9,7 +9,7 @@ const navLinks = [
   { name: "Docs", href: "/docs" },
   { name: "Teams", href: "/teams" },
   { name: "Community", href: "/community" },
-];
+] as const;
 
 const dropdownContent = {
   ShowCase: {
@@ -28,11 +28,11 @@ const dropdownContent = {
     items: ["Dashboard", "Events", "Tech Stack"],
     image: "/images/global.jpg",
   },
-};
+} as const;
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hoveredMenu, setHoveredMenu] = useState(null);
+  const [hoveredMenu, setHoveredMenu] = useState<keyof typeof dropdownContent | null>(null);
   const pathname = usePathname();
   const overlayRef = useRef(null);
   const linksRef = useRef<(HTMLAnchorElement | null)[]>([]);
